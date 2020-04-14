@@ -1,0 +1,29 @@
+<div class="example-container">
+    <h2 mat-dialog-title>{{title}}</h2>
+    <mat-card class="example-card center">
+      <form #myform="ngForm" class="example-form" (ngSubmit)="onSubmit()"> 
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="name" name="surveryDto.name" required/>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="lastname" name="surveryDto.lastname" required/>
+        </mat-form-field>
+        
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="edad" name="surveryDto.edad" required/>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <mat-select placeholder="Lenguaje de Programacion" name="surveryDto.language" required>
+              <mat-option value="1">C#</mat-option>
+              <mat-option value="2">JAVA</mat-option>
+              <mat-option value="3">PHP</mat-option>
+              <mat-option value="4">Phyton</mat-option>
+          </mat-select>
+        </mat-form-field>
+  
+        <button type="submit" mat-fab color="primary" [disabled]="myform.invalid">Enviar</button>
+      </form>
+    </mat-card>
+  </div>

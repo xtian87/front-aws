@@ -1,0 +1,63 @@
+<div class="example-container">
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
+        <mat-icon *ngIf="sidenav.opened">close</mat-icon>
+      </button>
+  
+      <h1>Survery App</h1>
+  
+      <span class="example-spacer"></span>
+  
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+  
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="/logout">
+          <mat-icon>exit_to_app</mat-icon>
+          <span>Cerrar Sesi&oacute;n</span>
+        </button>
+      </mat-menu>
+    </mat-toolbar>
+  
+    <mat-sidenav-container class="example-sidenav-container">
+      <mat-sidenav #sidenav mode="side" [(opened)]="opened" style="width: 200px">
+        
+        <mat-divider></mat-divider>
+  
+        <button mat-menu-item (click)="sidenav.toggle()" routerLink="survery" style="cursor: pointer">
+          <mat-icon>view_headline</mat-icon>
+          <span>Survery</span>
+        </button>
+        <mat-divider></mat-divider>
+  
+        <mat-accordion *ngIf="isAdmin">
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Mantenimiento
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+  
+            <button mat-menu-item (click)="sidenav.toggle()" routerLink="/app/admin/surveryList" style="cursor: pointer">
+              <span>Survery List</span>
+            </button>
+            <mat-divider></mat-divider>
+            <!--<button mat-menu-item (click)="sidenav.toggle()" routerLink="/app/admin/negocio" style="cursor: pointer">
+              <span>Negocio</span>
+            </button>
+            <mat-divider></mat-divider>
+            <button mat-menu-item (click)="sidenav.toggle()" routerLink="/app/admin/sedes" style="cursor: pointer">
+              <span>Sedes</span>
+            </button>-->
+  
+          </mat-expansion-panel>
+        </mat-accordion>
+      </mat-sidenav>
+  
+      <mat-sidenav-content>
+        <router-outlet></router-outlet>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
