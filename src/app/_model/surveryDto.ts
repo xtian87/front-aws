@@ -1,7 +1,7 @@
 export class SurveryDto {
-    id:BigInteger
+    id: BigInteger;
     name: string;
     lastname: string;
     edad: BigInteger;
-    idLanguage:BigInteger;
+    idLanguage: BigInteger;
 }

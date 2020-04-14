@@ -3,19 +3,19 @@
     <mat-card class="example-card center">
       <form #myform="ngForm" class="example-form" (ngSubmit)="onSubmit()"> 
         <mat-form-field class="example-full-width">
-            <input matInput placeholder="name" name="surveryDto.name" required/>
+            <input matInput placeholder="name"  [(ngModel)]="surveryDto.name" name="surveryDto.name" required/>
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
-            <input matInput placeholder="lastname" name="surveryDto.lastname" required/>
+            <input matInput placeholder="lastname" [(ngModel)]="surveryDto.lastname" name="surveryDto.lastname" required/>
         </mat-form-field>
         
         <mat-form-field class="example-full-width">
-            <input matInput placeholder="edad" name="surveryDto.edad" required/>
+            <input matInput placeholder="edad" [(ngModel)]="surveryDto.edad" name="surveryDto.edad" required/>
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
-          <mat-select placeholder="Lenguaje de Programacion" name="surveryDto.language" required>
+          <mat-select placeholder="Lenguaje de Programacion" [(ngModel)]="surveryDto.idLanguage" name="surveryDto.idLanguage" required>
               <mat-option value="1">C#</mat-option>
               <mat-option value="2">JAVA</mat-option>
               <mat-option value="3">PHP</mat-option>
